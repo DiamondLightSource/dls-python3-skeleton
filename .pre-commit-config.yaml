@@ -28,3 +28,11 @@ repos:
         language: system
         entry: pipenv run mypy src tests
         pass_filenames: false
+
+      - id: lockfile
+        name: Check Pipfile.lock is up to date
+        stages: [commit]
+        language: system
+        # since skeleton has no lockfile we must not fail if its missing
+        entry: bash -c 'if [[ -f Pipfile.lock ]] ; then if [[ Pipfile -nt Pipfile.lock ]]; then exit 1 ; fi; fi'
+        pass_filenames: false
