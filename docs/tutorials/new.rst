@@ -22,6 +22,9 @@ This will:
 Getting started with your new repo
 ----------------------------------
 
+To take advantage of all of the features of skeleton change the new github
+project settings as detailed in `github-settings`
+
 Your new repo has a workflow based on pipenv. The first thing to do is to use
 pipenv to install packages in a virtual environment::
 
